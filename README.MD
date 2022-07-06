@@ -5,7 +5,7 @@
 <br />
 
 <p align="center">
-  <img src=".github/technologies.png" alt="Technologies Logos" height="180" />
+  <img src=".github/technologies.png" alt="Technologies Logos" height="200" />
 </p>
 
 <p align="center">
