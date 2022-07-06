@@ -1,0 +1,30 @@
+{
+  "name": "cloudwatch-discord-alarm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dist:watch": "nodemon --watch ./dist ./dist/index.js",
+    "build:watch": "npx swc ./src -d ./dist --watch",
+    "dev": "concurrently \"yarn build:watch\" \"yarn dist:watch\"",
+    "build": "npx swc ./src -d ./dist --no-swcrc --config-file=./.prod.swcrc && cp .env ./dist",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.209",
+    "@swc/jest": "^0.2.21",
+    "@types/aws-lambda": "^8.10.101",
+    "@types/jest": "^28.1.4",
+    "@types/node": "^18.0.0",
+    "@types/regenerator-runtime": "^0.13.1",
+    "concurrently": "^7.2.2",
+    "dotenv": "^16.0.1",
+    "got": "^11.8.5",
+    "jest": "^28.1.2",
+    "nodemon": "^2.0.18",
+    "regenerator-runtime": "^0.13.9",
+    "ts-node": "^10.8.2",
+    "typescript": "^4.7.4"
+  }
+}

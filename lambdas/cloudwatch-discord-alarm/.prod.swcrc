@@ -1,0 +1,20 @@
+{
+  "exclude": [
+    "./**/*.(spec|test).(t|j)s$"
+  ],
+  "jsc": {
+    "target": "es5",
+    "parser": {
+      "syntax": "typescript",
+      "dynamicImports": true
+    },
+    "minify": {
+      "compress": {
+        "unused": true
+      }
+    }
+  },
+  "module": {
+    "type": "commonjs"
+  }
+}
