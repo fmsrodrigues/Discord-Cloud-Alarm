@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  Discord Cloud Alarm uses bleeding edge technologies, as Lambda Layers, Terraform and SWC, focusing on speed, light weighting and reproducibility. :rocket:
+  Discord Cloud Alarm uses bleeding edge technologies, as Lambda Layers, Terraform and SWC, focusing on speed, light weighting and reproducibility. :zap:
 </p>
 
 <br />
