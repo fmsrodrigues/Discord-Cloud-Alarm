@@ -144,7 +144,7 @@ describe("AWS Lambda Handler", () => {
       expect(discordMessages).toHaveLength(6);
     });
   
-    it("should return a single discord message when 'from' is not set", () => {
+    it("should return a single discord message when 'from' is not set and parsed message has less than 2000 characters", () => {
       const discordMessages = buildDiscordMessage({ snsMessage });
   
       expect(discordMessages).toHaveLength(1);

@@ -81,6 +81,6 @@ If you want, for any reason, to contact me, you can reach me at [fmaiasr.dev@gma
 - Discord Cloud Alarm is a project based on multiple researches, documentations and trial and error.
 - Due to an [issue with swc (2022/07/06)][500] I had to use an workaround proproused by another developer to avoid compiling the .spec file and deploy it to production.
 - This project focus on problem solving, practicing and exibithing all the knowledge I gathered through work, courses, guides and others projects across the years.
-- Last feature update commit: 2022/07/06
+- Last feature update commit: 2022/07/12
   
 [500]: https://github.com/swc-project/jest/issues/62

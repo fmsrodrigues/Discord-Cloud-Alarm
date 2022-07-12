@@ -26,10 +26,26 @@ export function isSNSMessageAlarm(parsedJson: SNSMessage): boolean {
 
 export function buildDiscordMessage({ snsMessage, from }: BuildSNSMessageParams): DiscordEmbeddedFields[]  {
   if(!from) {
-    return [{
-      name: "Something not parsed happened",
-      value: JSON.stringify(snsMessage)
-    }];
+    const messagesContent: string[] = JSON.stringify(snsMessage).match(/.{1,2000}/g)!;
+    if(messagesContent.length > 20) {
+      const limitedMessages = messagesContent.slice(0, 20).map((message, index) => {
+        return {
+          name: `Something not parsed happened. Log fragment: ${index + 1}`,
+          value: message
+        }
+      });
+
+      return [{ name: "Something not parsed happend", value: "message is to long to send" }, ...limitedMessages];
+    }
+
+    const messages: DiscordEmbeddedFields[] = messagesContent.map((message, index) => {
+      return {
+        name: `Something not parsed happened. Log fragment: ${index + 1}`,
+        value: message
+      }
+    })
+
+    return messages;
   };
 
   return [{
@@ -73,6 +89,7 @@ export async function sendDiscordMessage(discordMessage: DiscordEmbeddedFields[]
     json: {
       username: discord.username,
       avatar_url: discord.avatarUrl,
+      content: "Alarm Triggered",
       embeds: [{
         color: discord.embedsColor,
         fields: discordMessage
